@@ -1,0 +1,51 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.2/js/dataTables.fixedColumns.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-2.2.4/dt-1.10.13/fc-3.2.2/fh-3.1.2/r-2.1.0/sc-1.4.2/datatables.min.css" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            const table = $('#tab').DataTable({
+                scrollY: "400px",
+                scrollX: true,
+                scrollCollapse: false,
+                paging: false,
+                fixedColumns: {
+                    leftColumns: 1,
+                }
+            });
+        });
+
+    </script>
+</head>
+<a href="login.ejs">Create User</a>
+<div class="tab">
+<table id="tab" class="table table-striped stripe row-border order-column" cellspacing="3" width="100%">
+    <thead>
+    <tr>
+        <th>name surname</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Show</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(let i = 0; i < data.length; i++){ %>
+        <tr>
+            <td><%= data[i].name%></td>
+            <td><%= data[i].email%></td>
+            <td><%= data[i].phone%></td>
+            <td><a href="/admin/users/edit/<%=data[i].id%>"><i class="fa fa-pencil-square-o icons" ></i></a></td>
+            <td><a href="/admin/users/delete/<%=data[i].id%>"><i class="fa fa-trash-o icons"></i></a></td>
+            <td><a href="/admin/users/show/<%= data[i].id%>"><i class="fa fa-eye icons"></i></a></td>
+
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+</div>
+
+

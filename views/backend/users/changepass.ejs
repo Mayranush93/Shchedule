@@ -1,0 +1,24 @@
+
+<div class="tab">
+
+
+        <form action="/admin/users/changePassword" method="POST">
+            <div class="input-container">
+                <i class="fa fa-key icon"></i>
+                <input name="oldpass" type="password"  id="oldpas" value="" class="creat-input" placeholder=" Old Password">
+                <input name="oldpas" type="hidden" value="<%= data.password%>">
+            </div>
+            <div class="input-container">
+                <i class="fa fa-key icon"></i>
+                <input name="password" type="password"  id="pass" value="" class="creat-input" placeholder="New Password">
+                <input name="id" type="hidden"  value="<%= data.id%>">
+            </div>
+            <div class="input-container">
+                <i class="fa fa-key icon"></i>
+                <input name="repass" type="password"  id="repass" value="" class="creat-input" placeholder="Repeat New Password">
+            </div>
+            <input type="submit" value="Send" class="button"/>
+
+        </form>
+
+</div>
