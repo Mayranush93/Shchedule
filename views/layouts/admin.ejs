@@ -1,22 +1,68 @@
 <%- include("../partials/header.ejs") %>
 <main>
     <section>
-        <aside>
-          <!--  <ul>
-                <li>
-                    <a href="/admin/users">user management</a>
-                </li>
-                <li>
-                    <a href="/admin/users/create">Create User</a>
-                </li>
-                <li>
-                    <a href="/admin/login">Admin Login</a>
-                </li>
-                <li>
-                    <a href="/admin/courses">Course manegment</a>
-                </li>
-            </ul>-->
-        </aside>
+        <!--Logo part-->
+
+        <div class="sidebar">
+            <div class="sidebar-brand">
+                <h1>GITC</h1>
+            </div>
+
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href=""class="active"><span class="las la-igloo"></span>
+                            <span>Dashboard</span></a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/users"><span class="las la-users"></span>
+                            <span>User Manegment</span></a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="/admin/courses"><span class="las la-course"></span>
+                            <span>Courses</span></a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="/about"><span class="las la-info-circle"></span>
+                            <span>About</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- Menu part -->
+
+        <!--main content part-->
+
+        <div class="main-content">
+            <header>
+                <h1><span class="las la-bars">Dashboard</span></h1>
+                <div class="search-wrapper">
+                <span>
+                    <i class="las la-search"></i>
+                    <input type="search" placeholder="Search here...">
+                </span>
+                </div>
+
+                <div class="user-wrapper">
+                    <img src="/images/istockphoto-1209654046-612x612.jpg" width="40px" height="30px" alt="Person">
+                </div>
+                <h4>Jack Daniel</h4>
+            </header>
+
+            <main>
+                <div class="">
+
+                </div>
+            </main>
+        </div>
+
+
         <div class="main">
             <%- body %>
         </div>
