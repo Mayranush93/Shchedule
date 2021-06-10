@@ -1,6 +1,6 @@
 const User = require('../../models/User.js');
 const passwordHash = require("password-hash")
-
+const validator = require('validator');
 exports.addUser = function (request, response) {
     const locals = {
         title: 'Create user',
@@ -57,7 +57,7 @@ exports.Pass = function (request,response){
     };
     //console.log(request.params.id);
     User.getUserById(request.params.id).then((result) => {
-        //console.log(result[0]);
+        console.log(result[0]);
         locals.data = result[0];
         response.render('backend/users/changepass', locals);
     });
@@ -76,13 +76,11 @@ exports.editUser = function (request, response) {
         response.render('backend/users/edit', locals);
     })
 };
-
 exports.deleteUser = function (request, response) {
 
     User.delete(request.params.id).then(
     response.redirect('/admin/users'))
 };
-
 exports.showUser = function (request, response) {
 
     const locals = {
@@ -112,6 +110,8 @@ exports.getUsers = function (request, response) {
 
 };
 exports.createUser = function (req, res) {
+    let mail = req.body.email;
+    if(validator.isEmail(mail)){
     let pas = req.body.pass;
     let repas = req.body.repass;
     if (pas===repas) {
@@ -124,7 +124,7 @@ exports.createUser = function (req, res) {
         user.save().then( () => {
             res.redirect('/admin/users');
         })
-    }else{
+    }}else{
         const locals = {
             title: 'Create user',
             description: 'Create user Page Description',

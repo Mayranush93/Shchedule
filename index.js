@@ -2,6 +2,7 @@ global.express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const app = express();
 const bodyparser =require('body-parser');
+const validator = require("express-validator");
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public/"));
 app.use(bodyparser.urlencoded({extended:false}));

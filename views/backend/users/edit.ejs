@@ -5,13 +5,15 @@
 </p>
 
 
-<form action="/admin/users/updateUser" method="POST">
-   <label for="name">Name Surname</label>
-   <input type="text" name="name" id="name" value="<%= data.name%>"><br><br>
-   <label for="email">Email</label>
-   <input name="email" type="text"  id="email" value="<%= data.email%>"><br><br>
-   <label for="phone">Phone</label>
-   <input name="phone" type="text"  id="phone" value="<%= data.phone%>"><br><br>
-   <input type="hidden" name="id" value="<%= data.id%>" ><br><br>
-   <input type="submit" value="Send" />
-</form>
+<div class="login_center">
+   <form action="/admin/users/updateUser" method="POST">
+      <label for="name">Name Surname</label>
+          <input type="text" name="name" id="name" value="<%= data.name%>"><br><br>
+      <label for="email">Email</label>
+          <input name="email" type="text"  id="email" value="<%= data.email%>"><br><br>
+      <label for="phone">Phone</label>
+          <input name="phone" type="text"  id="phone" value="<%= data.phone%>"><br><br>
+          <input type="hidden" name="id" value="<%= data.id%>" ><br><br>
+          <input type="submit" value="Send" />
+   </form>
+</div>

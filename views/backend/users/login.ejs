@@ -1,24 +1,25 @@
 <% if (msg) { %>
     <%= msg %>
 <% } %>
-<div class="page">
-    <div class="container">
-        <div class="left">
-            <div class="login">Login</div>
-        </div>
-        <div class="right">
-        <form action="admin/login" method="POST" class="form">
-            <div class="input-container">
-                <i class="fa fa-envelope icon"></i>
-                <input name="email" type="text"  id="email" class="creat-input" placeholder="Email">
+<div class="login_center">
+    <div class="page">
+        <div class="container">
+            <div class="left">
+                <div class="login">Login</div>
             </div>
-            <div class="input-container">
-                <i class="fa fa-key icon"></i>
-                <input name="pass" type="password"  id="pass" class="creat-input" placeholder="Password">
+            <div class="right">
+                <form action="admin/login" method="POST" class="form">
+                    <div class="input-container">
+                        <i class="fa fa-envelope icon"></i>
+                        <input name="email" type="text" id="email" class="creat-input" placeholder="Email">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-key icon"></i>
+                        <input name="pass" type="password" id="pass" class="creat-input" placeholder="Password">
+                    </div>
+                    <input type="submit" value="Send" class="button" id="button"/>
+                </form>
             </div>
-            <input type="submit" value="Send" class="button" id="button"/>
-        </form>
         </div>
     </div>
 </div>
-
